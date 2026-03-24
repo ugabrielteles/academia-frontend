@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 const navLinks = [
   { href: '/dashboard', label: 'Dashboard', icon: '🏠' },
   { href: '/students', label: 'Alunos', icon: '👥' },
+  { href: '/plans', label: 'Planos', icon: '📦' },
   { href: '/workouts', label: 'Treinos', icon: '💪' },
   { href: '/finance', label: 'Financeiro', icon: '💰' },
   { href: '/checkin', label: 'Checkin', icon: '✅' },
