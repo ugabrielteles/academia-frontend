@@ -91,7 +91,7 @@ export default function ReportsPage() {
               { label: 'Inativos', value: inactiveStudents, color: 'bg-gray-400' },
               { label: 'Bloqueados', value: blockedStudents, color: 'bg-red-500' },
             ].map((item) => {
-              const total = (students?.length || 1)
+              const total = Math.max(students?.length || 0, 1)
               const pct = Math.round((item.value / total) * 100)
               return (
                 <div key={item.label}>

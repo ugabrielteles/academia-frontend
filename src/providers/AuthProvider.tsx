@@ -21,8 +21,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   useEffect(() => {
-    const stored = localStorage.getItem('access_token')
-    setTokenState(stored)
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('access_token')
+      setTokenState(stored)
+    }
   }, [])
 
   useEffect(() => {

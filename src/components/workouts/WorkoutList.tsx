@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/Button'
 
 interface WorkoutListProps {
   workouts: Workout[]
-  onEdit: (workout: Workout) => void
-  onDelete: (id: string) => void
+  onEdit?: (workout: Workout) => void
+  onDelete?: (id: string) => void
 }
 
 export function WorkoutList({ workouts, onEdit, onDelete }: WorkoutListProps) {
@@ -33,12 +33,16 @@ export function WorkoutList({ workouts, onEdit, onDelete }: WorkoutListProps) {
             ))}
           </div>
           <div className="mt-4 flex gap-2">
-            <Button size="sm" variant="outline" onClick={() => onEdit(workout)}>
-              Editar
-            </Button>
-            <Button size="sm" variant="danger" onClick={() => onDelete(workout._id)}>
-              Excluir
-            </Button>
+            {onEdit && (
+              <Button size="sm" variant="outline" onClick={() => onEdit(workout)}>
+                Editar
+              </Button>
+            )}
+            {onDelete && (
+              <Button size="sm" variant="danger" onClick={() => onDelete(workout._id)}>
+                Excluir
+              </Button>
+            )}
           </div>
         </Card>
       ))}

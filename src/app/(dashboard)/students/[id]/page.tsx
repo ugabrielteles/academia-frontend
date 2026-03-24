@@ -37,11 +37,7 @@ export default function StudentDetailPage() {
         {loadingWorkouts ? (
           <Spinner />
         ) : (
-          <WorkoutList
-            workouts={workouts || []}
-            onEdit={() => {}}
-            onDelete={() => {}}
-          />
+          <WorkoutList workouts={workouts || []} />
         )}
       </Card>
       <Card title="Cobranças">
